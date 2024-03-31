@@ -1,0 +1,29 @@
+1.Firs%KAFKA_HOME%\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181t Install this version of kafka  "kafka_2.12-2.8.1" on local premises or any ec2 instances
+
+2.Check the Java Version must be already installed on computer,check by using this command "java -version" in CMD
+
+-------------------Start the Zookeeper in CMD[Background]---------------------
+%KAFKA_HOME%\bin\windows\zookeeper-server-start.bat %KAFKA_HOME%\config\zookeeper.properties
+
+-------------------Start the Kafka-Server in CMD[Background]------------------
+%KAFKA_HOME%\bin\windows\kafka-server-start.bat %KAFKA_HOME%\config\server.properties
+
+------------------Now Create the topic in kafka -> ex[demokafka]--------------------------------
+%KAFKA_HOME%\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic demokafka
+
+------------------List down the topics which are created in this server-----------------------
+%KAFKA_HOME%\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181
+
+Now the "demokafka" named topic is created
+
+**Start the Producer in another CMD
+%KAFKA_HOME%\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic demokafka
+_And enter some data in this to check the data is generating in this topic and gets transfers to the consumer or not
+
+**Start the Consumer
+%KAFKA_HOME%\bin\windows\kafka-console-consumer.bat --topic indwi --from-beginning --bootstrap-server localhost:9092
+_Now the data entered in the producer will get display in this Consumer console, Now we all are set our consumer and producer is 
+working fine
+
+
+
