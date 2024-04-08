@@ -21,7 +21,7 @@ Now the "demokafka" named topic is created
 _And enter some data in this to check the data is generating in this topic and gets transfers to the consumer or not
 
 **Start the Consumer
-%KAFKA_HOME%\bin\windows\kafka-console-consumer.bat --topic indwi --from-beginning --bootstrap-server localhost:9092
+%KAFKA_HOME%\bin\windows\kafka-console-consumer.bat --topic demokafka --from-beginning --bootstrap-server localhost:9092
 _Now the data entered in the producer will get display in this Consumer console, Now we all are set our consumer and producer is 
 working fine
 
